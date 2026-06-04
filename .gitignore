@@ -1,0 +1,21 @@
+# React
+eld-frontend/node_modules
+eld-frontend/dist
+
+# Python
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+
+# Environment
+.env
+.env.local
+
+# VS Code
+.vscode
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,295 @@
+html,
+body,
+#root {
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f7fa;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.home {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+header {
+  width: 100%;
+  background-color: #ff7a00;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+
+form {
+  width: calc(100% - 40px);
+
+  margin: 30px auto;
+
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  background: white;
+  padding: 25px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+form input {
+  flex: 1;
+  min-width: 250px;
+
+  height: 55px;
+  padding: 0 15px;
+
+  font-size: 16px;
+
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+
+  transition: 0.2s;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #3399ff;
+  box-shadow: 0 0 5px rgba(51, 153, 255, 0.4);
+}
+
+form button {
+  min-width: 220px;
+  height: 55px;
+
+  background-color: #4da6ff;
+
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-color: #1f8cff;
+  transform: translateY(-2px);
+}
+
+.leaflet-container {
+  width: calc(100% - 40px) !important;
+  height: 600px !important;
+
+  margin: 0 auto;
+
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+.map-wrapper {
+  width: calc(100% - 40px);
+  margin: 25px auto;
+
+  background: white;
+  padding: 15px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+.trip-info {
+  width: calc(100% - 40px);
+
+  margin: 25px auto;
+
+  background: white;
+  padding: 20px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.trip-info h2 {
+  margin-bottom: 10px;
+}
+
+.trip-info p {
+  margin-bottom: 8px;
+}
+
+
+
+footer {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  color: white;
+  
+  min-height: 120px;
+
+  font-size: 16px;
+}
+
+.autocomplete-container {
+  position: relative;
+  width: 100%;
+}
+
+.autocomplete-container input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  background: white;
+  border: 1px solid #dcdcdc;
+  border-top: none;
+
+  max-height: 100px;
+  overflow-y: auto;
+
+  z-index: 1000;
+}
+
+.suggestions li {
+  padding: 6px 10px;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.suggestions li:last-child {
+  border-bottom: none;
+}
+
+.suggestions li:hover {
+  background-color: #f5f5f5;
+}.trip-form {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.autocomplete-container {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+.form-row input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-row button {
+  padding: 12px 20px;
+  min-width: 180px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  background: white;
+  border: 1px solid #ddd;
+  border-top: none;
+
+  max-height: 220px;
+  overflow-y: auto;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  z-index: 1000;
+
+  border-radius: 0 0 8px 8px;
+}
+
+.suggestions li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background-color: #f5f5f5;
+}
+
+@media (max-width: 1024px) {
+
+  .autocomplete-container {
+    min-width: 200px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .autocomplete-container,
+  .form-row input,
+  .form-row button {
+    width: 100%;
+  }
+
+  .form-row button {
+    min-width: unset;
+  }
+
+}
