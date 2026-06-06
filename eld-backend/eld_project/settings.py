@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,10 +20,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-mk829e#qcv(hzncdl9_wnh%=m%2)6qq9un#&vb!=k&awd_!^ri'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-mk829e#qcv(hzncdl9_wnh%=m%2)6qq9un#&vb!=k&awd_!^ri')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = []
 
@@ -130,8 +130,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://eld-route-planner-42hd4orfo-julianm100.vercel.app",
+
 ]
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+    ".onrender.com"
 ]
