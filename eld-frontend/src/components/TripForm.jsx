@@ -132,7 +132,7 @@ setRestStops(stops.restStops);
 
 
 const responseEld = await fetch(
-  "http://127.0.0.1:8000/api/calculate-eld/",
+  `${import.meta.env.VITE_API_URL}/api/calculate-eld-logs/`,
   {
     method: "POST",
     headers: {
