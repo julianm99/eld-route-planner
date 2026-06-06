@@ -139,3 +139,9 @@ ALLOWED_HOSTS = [
     "localhost",
     ".onrender.com"
 ]
+
+
+STATIC_URL = 'static/'
+
+# AÑADE ESTA LÍNEA AQUÍ ABAJO:
+STATIC_ROOT = BASE_DIR / 'staticfiles'
