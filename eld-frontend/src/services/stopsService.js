@@ -2,7 +2,7 @@ export async function getStops(routePoints) {
 
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/get-stops/`,
+      `${import.meta.env.VITE_API_URL}/api/stops/`,
       {
         method: "POST",
         headers: {
